@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <h1>Formulario PHP</h1>
-        <form action="recibir.php" method="get">
+        <form action="recibir.php" method="post">
             <p>
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" />
