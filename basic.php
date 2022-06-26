@@ -91,7 +91,7 @@ echo $year;
 
 // Operadores de asignacion
 $edad = 5;
-echo ($edad+=5)
+echo ($edad+=5);
 
 // Variables superglobales
 // SERVIDOR
