@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS `myBlog`.`USUARIOS` (
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
   `fecha` DATE NOT NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  CONSTRAINT `uq_email` UNIQUE(`email`))
 ENGINE = InnoDB;
 
 
