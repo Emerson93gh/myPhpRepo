@@ -36,3 +36,51 @@ SELECT UPPER(CONCAT(nombre, ' ', apellidos)) AS 'CONVERSION' FROM usuarios;
 SELECT LENGTH(CONCAT(nombre, ' ', apellidos)) AS 'CONVERSION' FROM usuarios;
 /* Funcion para retirar los espacios innecesarios antes y despues */
 SELECT TRIM(CONCAT('     ', nombre, ' ', apellidos, '     ')) AS 'CONVERSION' FROM usuarios;
+
+/* Funciones con fecha */
+SELECT email, fecha FROM usuarios;
+/* Mostrar fecha actual en una columna */
+SELECT email, fecha, CURDATE() AS 'Fecha actual' FROM usuarios;
+/* Mostra la diferencia entre dos fechas */
+SELECT email, DATEDIFF(fecha, CURDATE()) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el nombre del dia de una fecha */
+SELECT email, DAYNAME(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el dia del mes en una fecha */
+SELECT email, DAYOFMONTH(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el dia de la semana en una fecha */
+SELECT email, DAYOFWEEK(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el dia del anho en una fecha */
+SELECT email, DAYOFYEAR(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el mes de una fecha */
+SELECT email, MONTH(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el anho de una fecha */
+SELECT email, YEAR(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar el dia de una fecha */
+SELECT email, DAY(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar la hora de una fecha - si la hay */
+SELECT email, HOUR(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar los minutos de una fecha - si los hay */
+SELECT email, MINUTE(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mostrar los segundos de una fecha - si los hay */
+SELECT email, SECOND(fecha) AS 'Fecha actual' FROM usuarios;
+/* Mosrar la hora actual en una columna */
+SELECT email, CURTIME() AS 'Hora actual' FROM usuarios;
+/* Mostra la fecha y hora del sistema en una columna */
+SELECT email, SYSDATE() AS 'Fecha y hora actual' FROM usuarios;
+/* Mostrar fecha con formato d-m-Y - y no el americano default */
+SELECT email, DATE_FORMAT(fecha, '%d-%m-%Y') AS 'Fecha con formato' FROM usuarios;
+
+/* Funciones generales */
+/* Verificar si una columna permite/tiene datos nulos - retorna 0 y 1 */
+SELECT email, ISNULL(apellidos) FROM usuarios;
+/* Verificar si son diferentes dos cadenas de texto - 0 si son iguales y 1 si son diferentes*/
+SELECT email, STRCMP('HOLA', 'HOLA') FROM usuarios;
+/* Verificar la version de mySQL en un sentencia */
+SELECT VERSION() FROM usuarios;
+/* Verificar el usuario utilizado en mySQL */
+SELECT USER() FROM usuarios;
+/* Mostrar el valor distinto de un grupo con el mismo registro */
+SELECT DISTINCT USER() FROM usuarios;
+SELECT DISTINCT DATABASE() FROM usuarios;
+/* Verificar si existe un campo vacio y si lo hay agregar el texto CAMPO VACIO */
+SELECT IFNULL(apellidos, 'CAMPO VACIO') FROM usuarios;
