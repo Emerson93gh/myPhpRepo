@@ -84,3 +84,15 @@ SELECT DISTINCT USER() FROM usuarios;
 SELECT DISTINCT DATABASE() FROM usuarios;
 /* Verificar si existe un campo vacio y si lo hay agregar el texto CAMPO VACIO */
 SELECT IFNULL(apellidos, 'CAMPO VACIO') FROM usuarios;
+
+/* Mostrar resultados ordenados por id - default es ascendente */
+SELECT * FROM usuarios ORDER BY id;
+/* Mostrar resultados ordenados por id ascendente */
+SELECT * FROM usuarios ORDER BY id ASC;
+/* Mostrar resultados ordenados por id descendente */
+SELECT * FROM usuarios ORDER BY id DESC;
+
+/* Mostrar solo 2 registros */
+SELECT * FROM usuarios LIMIT 2;
+/* Mostrar despues del registro 2 al 4 */
+SELECT * FROM usuarios LIMIT 2, 4;
