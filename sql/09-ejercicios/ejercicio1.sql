@@ -61,3 +61,39 @@ CREATE TABLE encargos (
     CONSTRAINT fk_encargo_cliente FOREIGN KEY(cliente_id) REFERENCES clientes(id),
     CONSTRAINT fk_encargo_coche FOREIGN KEY(coche_id) REFERENCES coches(id)
 )ENGINE=InnoDB;
+
+/* Rellenar la bd con informacion */
+/* Coches */
+INSERT INTO coches VALUES (NULL, 'Lancer EVO', 'Mitsubishi', 30000, 22);
+INSERT INTO coches VALUES (NULL, 'Elantra', 'Hyundai', 8000, 9);
+INSERT INTO coches VALUES (NULL, 'Corolla', 'Toyota', 19000, 17);
+INSERT INTO coches VALUES (NULL, 'GTR', 'Nissan', 27000, 12);
+INSERT INTO coches VALUES (NULL, 'Accent', 'Hyundai', 6000, 6);
+INSERT INTO coches VALUES (NULL, 'CLS 2000', 'Mercedez Benz', 35000, 10);
+
+/* Grupos */
+INSERT INTO grupos VALUES (NULL, 'Vendedores A', 'Madrid');
+INSERT INTO grupos VALUES (NULL, 'Vendedores B', 'Madrid');
+INSERT INTO grupos VALUES (NULL, 'D. Mecanicos', 'Madrid');
+INSERT INTO grupos VALUES (NULL, 'Vendedores A', 'Valencia');
+INSERT INTO grupos VALUES (NULL, 'Vendedores B', 'Valencia');
+INSERT INTO grupos VALUES (NULL, 'Vendedores C', 'Valencia');
+INSERT INTO grupos VALUES (NULL, 'Vendedores A', 'Bilbao');
+INSERT INTO grupos VALUES (NULL, 'Vendedores B', 'Pamplona');
+INSERT INTO grupos VALUES (NULL, 'Vendedores C', 'San Salvador');
+
+
+/* Vendedores */
+INSERT INTO vendedores VALUES (NULL, 1, NULL, 'David', 'Lopez', 'Encargado de tienda', CURDATE(), 3000, 4);
+INSERT INTO vendedores VALUES (NULL, 1, 1, 'Fran', 'Martinez', 'Ayudante de tienda', CURDATE(), 1300, 2);
+INSERT INTO vendedores VALUES (NULL, 2, NULL, 'Nelson', 'Sanchez', 'Encargado de tienda', CURDATE(), 2800, 5);
+INSERT INTO vendedores VALUES (NULL, 2, 3, 'Jesus', 'Lopez', 'Ayudante de tienda', CURDATE(), 1000, 6);
+INSERT INTO vendedores VALUES (NULL, 3, NULL, 'Victor', 'Lopez', 'Mecanico', CURDATE(), 1200, 6);
+INSERT INTO vendedores VALUES (NULL, 4, NULL, 'Antonio', 'Lopez', 'Vendedor de repuestos', CURDATE(), 500, 2);
+INSERT INTO vendedores VALUES (NULL, 5, NULL, 'Salvador', 'Lopez', 'Vendedor', CURDATE(), 400, 2);
+INSERT INTO vendedores VALUES (NULL, 6, NULL, 'Joaquin', 'Lopez', 'Vendedor', CURDATE(), 400, 2);
+INSERT INTO vendedores VALUES (NULL, 6, 8, 'Luis', 'Lopez', 'Ayudante', CURDATE(), 300, 1);
+
+/* Clientes */
+
+/* Encargos */
