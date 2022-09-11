@@ -95,5 +95,21 @@ INSERT INTO vendedores VALUES (NULL, 6, NULL, 'Joaquin', 'Lopez', 'Vendedor', CU
 INSERT INTO vendedores VALUES (NULL, 6, 8, 'Luis', 'Lopez', 'Ayudante', CURDATE(), 300, 1);
 
 /* Clientes */
+INSERT INTO clientes VALUES (NULL, 1, 'Construcciones Diaz', 'San Salvador', 60000, CURDATE());
+INSERT INTO clientes VALUES (NULL, 1, 'Fruteria ABC Inc', 'La Libertad', 32000, CURDATE());
+INSERT INTO clientes VALUES (NULL, 1, 'Imprenta Martinez Inc', 'Santa Ana', 12000, CURDATE());
+INSERT INTO clientes VALUES (NULL, 1, 'Jesus Colchones Inc', 'Sonsonate', 27000, CURDATE());
+INSERT INTO clientes VALUES (NULL, 1, 'Bar Pepe Inc', 'La Libertad', 18000, CURDATE());
+INSERT INTO clientes VALUES (NULL, 1, 'Tienda PC Inc', 'San Salvador', 35000, CURDATE());
 
 /* Encargos */
+INSERT INTO encargos VALUES (NULL, 1, 1, 2, CURDATE());
+INSERT INTO encargos VALUES (NULL, 2, 2, 4, CURDATE());
+INSERT INTO encargos VALUES (NULL, 3, 3, 1, CURDATE());
+INSERT INTO encargos VALUES (NULL, 4, 4, 1, CURDATE());
+INSERT INTO encargos VALUES (NULL, 5, 5, 3, CURDATE());
+INSERT INTO encargos VALUES (NULL, 6, 6, 1, CURDATE());
+
+/* Consultas multitabla de ejemplo */
+SELECT cantidad, nombre FROM encargos, clientes WHERE encargos.cliente_id = clientes.id;
+SELECT cantidad, nombre, modelo FROM encargos, clientes, coches WHERE encargos.cliente_id = clientes.id AND encargos.cliente_id = coches.id;
