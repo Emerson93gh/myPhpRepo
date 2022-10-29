@@ -34,7 +34,7 @@ function tabla($numero) {
 if(isset($_GET['numero'])) {
     tabla($_GET['numero']);
 } else {
-    echo "No hay un numero para obtener la tabla de multiplicar";
+    echo "No hay un numero para obtener la tabla de multiplicar. <br/>";
 }
 
 /*
@@ -63,7 +63,7 @@ for($i = 1; $i <= 10; $i++) {
 //  calculadora(10, 30);
 //  calculadora(30, 10);
 
-// Ejemplo 4 parametros opcionales
+// Ejemplo 4 parametros opcionales y return.
 function calculadora($numero1, $numero2, $negrita = false) {
     // conjunto de operaciones
     $suma = $numero1 + $numero2;
@@ -71,20 +71,41 @@ function calculadora($numero1, $numero2, $negrita = false) {
     $multiplicacion = $numero1 * $numero2;
     $division = $numero1 / $numero2;
 
+    $cadena_texto = "";
+
     if($negrita){
-        echo "<h1>";
+        $cadena_texto .= "<h1>";
     }
-    echo "Suma: $suma <br/>";
-    echo "Resta: $resta <br/>";
-    echo "Multiplicacion: $multiplicacion <br/>";
-    echo "Division: $division <br/>";
+    $cadena_texto .= "Suma: $suma <br/>";
+    $cadena_texto .= "Resta: $resta <br/>";
+    $cadena_texto .= "Multiplicacion: $multiplicacion <br/>";
+    $cadena_texto .= "Division: $division <br/>";
     if($negrita){
-        echo "</h1>";
+        $cadena_texto .= "</h1>";
     }
-    echo "<hr/>";
+    $cadena_texto .= "<hr/>";
+    return $cadena_texto;
  }
 
- calculadora(10, 30);
- calculadora(30, 10, true);
+ echo calculadora(10, 30);
+ echo calculadora(30, 10, true);
+
+ // Ejemplo 4, utilizando una funcion dentro de otra funcion
+
+ function getNombre($nombre) {
+    $texto = "El nombre es: $nombre";
+    return $texto;
+ }
+ function getApellidos($apellidos) {
+    $texto = "Los apellidos son: $apellidos";
+    return $texto;
+ }
+ function devuelveElNombre($nombre, $apellidos) {
+    $texto = getNombre($nombre)
+        ."<br/>". getApellidos($apellidos);
+    return $texto;
+ }
+
+ echo devuelveElNombre("Alexander", "Solano");
 
 ?>
